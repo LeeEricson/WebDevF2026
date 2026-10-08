@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Original Title</h1>
+    <button onclick="updateTitle()">Click Me!</button>
+
+    <div id="output">What is your name?</div>
+    <input type="text" id="inputField" placeholder="Your name here">
+    <button onclick="updateText()">Update Text</button>
+
+    <script>
+        function updateTitle() {
+            document.getElementById("title").innerHTML = "New Title!"
+        }
+
+        function updateText() {
+            const newText = document.getElementById('inputField').value;
+            let result = "<h1>Your name is " + newText + "</h1>";
+            document.getElementById('output').innerHTML = result;
+
+        }
+    </script>
+</body>
+</html>
