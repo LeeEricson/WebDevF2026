@@ -1,28 +1,80 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lab: Build a Greeting Message App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #greetingMessage {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f5e6;
+            border: 1px solid #d4e7d3;
+            border-radius: 4px;
+            color: #2f6627;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="title">Original Title</h1>
-    <button onclick="updateTitle()">Click Me!</button>
-
-    <div id="output">What is your name?</div>
-    <input type="text" id="inputField" placeholder="Your name here">
-    <button onclick="updateText()">Update Text</button>
-
+    <div class="container">
+        <h1>Greeting App</h1>
+        <p>Enter your name below and click "Show Greeting" to see a personalized greeting message.</p>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="showGreeting()">Show Greeting</button>
+        <div id="greetingMessage"></div>
+    </div>
     <script>
-        function updateTitle() {
-            document.getElementById("title").innerHTML = "New Title!"
-        }
+        function showGreeting() {
+            // Step 1: Get the name from the input field
+            const name = document.getElementById("nameInput").value;
 
-        function updateText() {
-            const newText = document.getElementById('inputField').value;
-            let result = "<h1>Your name is " + newText + "</h1>";
-            document.getElementById('output').innerHTML = result;
+            // Step 2: Create a greeting message using a variable
+            let greeting = "<h1>Hello, " + name + "</h1>";
 
+            // Step 3: Update the div element with the greeting message
+            document.getElementById('greetingMessage').innerHTML = greeting;
+            
         }
     </script>
 </body>
